@@ -1,0 +1,19 @@
+runtime {
+  key1 value1
+  key2 value2
+  flag1
+
+  system1 {
+     prop1 value1
+     prop2 value2
+     ports 1234 5678 9102
+
+  }
+
+  system2 {
+     prop1 value1
+     prop2 value2
+     ports 1234 5678 9102
+
+  }
+}
