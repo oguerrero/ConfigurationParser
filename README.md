@@ -1,7 +1,8 @@
 ## Configuration File Parser
 ***
 
-To run this program you need to have Python 3.10 or above installed.
+#### To run this program you need to have Python 3.10 or above installed.
+
 Program to parse configuration files made up of white space separated words and
 sections delimited by curly braces. 
 
@@ -39,7 +40,7 @@ Then enter the path to the configuration file.
 The program will print the tree structure of the configuration file,
 then it will ask you to enter a path for a specific section of the file.
 
-Example:
+#### Example:
 
 ```
 runtime.system1.subsystem1
@@ -48,4 +49,4 @@ runtime.system1.subsystem1
 Then you can search for a specific key, flag or subsection 
 embedded in the section path provided.
 
-To exit the program type 'exit' when asked for a path.
+To exit the program type '**exit**' when asked for a path.
