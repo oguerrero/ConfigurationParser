@@ -1,6 +1,7 @@
 ## Configuration File Parser
 ***
 
+To run this program you need to have Python 3.10 or above installed.
 Program to parse configuration files made up of white space separated words and
 sections delimited by curly braces. 
 
@@ -27,9 +28,7 @@ runtime {
 }
 ```
 
-To run this project you need to have Python 3.10 or above
-
-To run the program you have to go to the route of the project and type the following command:
+To start the program you have to go to the route of the folder and type the following command:
 
 ```
 python3 Main.py
