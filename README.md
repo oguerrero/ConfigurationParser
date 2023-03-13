@@ -29,7 +29,7 @@ runtime {
 }
 ```
 
-To start the program you have to go to the route of the folder and type the following command:
+To start the program you have to go to the route of the directory and type the following command:
 
 ```
 python3 Main.py
@@ -50,3 +50,7 @@ Then you can search for a specific key, flag or subsection
 embedded in the section path provided.
 
 To exit the program type '**exit**' when asked for a path.
+
+There is a example.txt file in the root directory so you can test how it works.
+
+To run the test I recommend using PyCharm or anything similar. Just right click on the directory tests and run all tests.
