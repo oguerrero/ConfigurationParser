@@ -29,7 +29,7 @@ def print_subsection(section):
     print_subsections(section)
 
     property_name = input("Please enter the name of the property you want to get: ")
-    section_property = section.get_subsection(property_name)
+    section_property = section.subsections.get(property_name, 0)
 
     if not section_property:
         print("The subsection does not exist")
@@ -73,7 +73,7 @@ def menu(config_parser):
                     print("The section does not have subsections")
                     continue
 
-                print_subsection(section, )
+                print_subsection(section)
             else:
                 print("The option does not exist")
         else:

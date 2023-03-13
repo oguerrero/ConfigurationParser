@@ -22,8 +22,17 @@ class ConfigParser:
                 match = re.match(r"^\s*(\w+)\s*{", line)
                 if match:
                     section_name = match.group(1)
-                    self.current_section = ConfigSection(section_name, parent=self.stack[-1])
-                    self.stack[-1].subsections.append(self.current_section)
+
+                    section = self.current_section.subsections.get(section_name)
+
+                    if section:
+                        # Section already exists, use it
+                        self.current_section = section
+                    else:
+                        # Create new section
+                        self.current_section = ConfigSection(section_name, parent=self.stack[-1])
+                        self.current_section.parent.subsections[section_name] = self.current_section
+
                     self.stack.append(self.current_section)
                     continue
 

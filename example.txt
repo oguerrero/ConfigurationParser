@@ -12,6 +12,11 @@ runtime {
          prop3 value1 value2 value3
          flag2
      }
+
+     subsystem1 {
+         prop4 value1 value2 value3
+         flag3
+     }
   }
 
   system2 {

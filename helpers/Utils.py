@@ -8,22 +8,20 @@ def print_section_info(section):
         print(flag)
     print("=====SUBSECTIONS=====")
     for subsection in section.subsections:
-        print(subsection.name)
+        print(subsection)
     print("=====================")
     print()
 
 
-def print_root(config_parser):
-    print("========TREE=========")
-    for section in config_parser.root_section.subsections:
-        print(section.name)
-        for subsection in section.subsections:
-            print(f'\t{subsection.name}')
-            for subsubsection in subsection.subsections:
-                print(f'\t\t{subsubsection.name}')
-                for subsubsubsection in subsubsection.subsections:
-                    print(f'\t\t\t{subsubsubsection.name}')
-    print("=====================")
+def print_root(config_parser, section=None, indent=0):
+    if section is None:
+        section = config_parser.root_section
+
+    print(" " * indent + section.name)
+
+    for subsection_name in section.subsections:
+        subsection = section.subsections[subsection_name]
+        print_root(config_parser, subsection, indent=indent + 2)
 
 
 def print_values(section):
@@ -48,6 +46,6 @@ def print_subsections(section):
     print()
     print("=====SUBSECTIONS=====")
     for subsection in section.subsections:
-        print(subsection.name)
+        print(subsection)
     print("=====================")
     print()

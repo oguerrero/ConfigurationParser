@@ -3,8 +3,11 @@ class ConfigSection:
         self.name = name
         self.values = {}
         self.flags = set()
-        self.subsections = []
+        self.subsections = dict([])
         self.parent = parent
+
+    def set_name(self, new_name):
+        self.name = new_name
 
     def get(self, key, default=None):
         return self.values.get(key, default)
@@ -13,10 +16,9 @@ class ConfigSection:
         return flag in self.flags   
 
     def get_subsection(self, name):
-        for subsection in self.subsections:
-            if subsection.name == name:
-                return subsection
-        return None
+        parts = name.split('.')
+
+        return self.subsections[parts[-1]]
 
     def get_subsections_name(self):
         return [subsection.name for subsection in self.subsections]
